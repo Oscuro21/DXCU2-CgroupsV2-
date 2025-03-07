@@ -1,0 +1,12 @@
+#la conf. va en /sys/fs/cgroup/$usuario
+#si queres permitir que los nombres de usuarios contengan caracteres numericos entonces
+#hay que cambiar la linea:
+# elif [[ ! "$usuario" =~ ^[0-9]+$ ]] && id "$usuario" &>/dev/null; then
+#por esta linea:
+# elif id "$usuario" &>/dev/null; then
+#en el archivo:
+#script.sh
+
+#conf se aplica en /sys/fs/cgroup/$usuario/cgroup.procs o /sys/fs/cgroup/$grupo/cgroup.procs
+#Systemd se guarda en /etc/systemd/system/limit-$usuario.service o /etc/systemd/system/limit-$grupo.service
+
